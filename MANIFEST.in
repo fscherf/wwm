@@ -1,0 +1,7 @@
+recursive-include wwm/templates/ *
+recursive-include wwm/static *
+
+global-exclude .*
+global-exclude *~
+global-exclude *.swp
+global-exclude *.pyc
