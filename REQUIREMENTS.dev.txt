@@ -1,1 +1,2 @@
+-e /home/fsc/devel/lona
 -e .
