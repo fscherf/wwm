@@ -1,14 +1,18 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <link href="/static/style.css" rel="stylesheet">
+    <link href="{{ Lona.load_static_file('style.css') }}" rel="stylesheet">
     {{ Lona.load_stylesheets() }}
   </head>
   <body>
     <div id="lona"></div>
+    <div id="wwm-windows"></div>
 
+    <script type="text/javascript" src="{{ Lona.load_static_file('wwm.js') }}"></script>
     {{ Lona.load_scripts() }}
     <script>
+      var window_root = document.querySelector('#wwm-windows');
+
       var lona_context = new Lona.LonaContext({
         target: '#lona',
         title: 'Lona',
@@ -25,6 +29,11 @@
       });
 
       lona_context.setup();
+
+      var window_manager = new WWM.WindowManager(window_root);
+
+      window_manager.load_state();
+
     </script>
   </body>
 </html>
